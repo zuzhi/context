@@ -1,0 +1,18 @@
+{
+  "name": "Context Menu Tricks",
+  "description": "better workflow",
+  "icons": {
+      "16": "images/mario.png"
+  },
+  "version": "0.1.0",
+  "browser_action": {
+    "default_icon": "images/mario.png",
+    "default_title": "voila!",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["contextMenus"],
+  "background": {
+    "scripts": ["scripts/context.js"]
+  },
+  "manifest_version": 2
+}
