@@ -13,6 +13,12 @@ chrome.contextMenus.create(
     "contexts": contexts,
     "onclick": copyIDCard
 });
+chrome.contextMenus.create(
+  {
+    "title": 'fire a new tab with this frame',
+    "contexts": ["page"],
+    "onclick": gotoFrameUrl
+});
 
 // A generic onclick callback function.
 function copyActionName(info, tab) {
@@ -36,6 +42,19 @@ function copyIDCard(info, tab) {
   var idcard = fnGenerateRandom();
   // copyToClipboard(idcard);
   copyTextToClipboard(idcard);
+}
+
+// Open frameUrl in a new tab
+function gotoFrameUrl(info, tab) {
+  console.log("item " + info.menuItemId + " was clicked");
+  console.log("info: " + JSON.stringify(info));
+  console.log("tab: " + JSON.stringify(tab));
+  if (typeof info.frameUrl == "undefined") {
+    return;
+  } else {
+    var href = info.frameUrl; // eg. "http://localhost:8080/cxjz/cxdb/ywbl/dbsqAction.do?&yaa001=110&aae251=0&___businessId=1020502"
+  }
+  chrome.tabs.create({index: 0, url: href});
 }
 
 // Copy text to clipboard, using a simple trick by Jarek Milewski on stackoverflow.com(http://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript)
