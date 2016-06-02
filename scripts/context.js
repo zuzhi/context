@@ -1,27 +1,53 @@
 // All context types
 var contexts = ["page","selection","link","editable","image","video","audio"];
-// Create one item for all context types.
+
 chrome.contextMenus.create(
   {
-    "title": 'copy action name',
+    "title": 'copy action name to clipboard',
     "contexts": contexts,
-    "onclick": copyActionName
+    "onclick": copyActionNameToClipboard
 });
 chrome.contextMenus.create(
   {
-    "title": 'copy a random id',
+    "title": 'copy a random id to clipboard',
     "contexts": contexts,
-    "onclick": copyIDCard
+    "onclick": copyIDCardToClipboard
 });
 chrome.contextMenus.create(
   {
-    "title": 'fire a new tab with this frame',
+    "title": 'open frame in new tab',
     "contexts": ["page"],
-    "onclick": gotoFrameUrl
+    "onclick": openFrameInNewTab
+});
+chrome.contextMenus.create(
+  {
+    "title": 'refresh current frame',
+    "contexts": ["page"],
+    "onclick": refreshCurrentFrame
+});
+chrome.contextMenus.create({
+  "title": 'notification',
+  "contexts": ["page"],
+  "onclick": notify
 });
 
-// A generic onclick callback function.
-function copyActionName(info, tab) {
+/**
+ * notify test notification
+ * @return {}
+ */
+function notify() {
+  new Notification("welcome", {
+    body: 'hello, world'
+  });
+}
+
+/**
+ * copyActionNameToClipboard Copy action name to clipboard
+ * @param  {Object} info
+ * @param  {Object} tab
+ * @return {}
+ */
+function copyActionNameToClipboard(info, tab) {
   console.log("item " + info.menuItemId + " was clicked");
   console.log("info: " + JSON.stringify(info));
   console.log("tab: " + JSON.stringify(tab));
@@ -37,18 +63,25 @@ function copyActionName(info, tab) {
   copyTextToClipboard(actionName);
 }
 
-// copyIDCard
-function copyIDCard(info, tab) {
+/**
+ * copyIDCardToClipboard Copy a random id to clipboard
+ * @param  {Object} info
+ * @param  {Object} tab
+ * @return {}
+ */
+function copyIDCardToClipboard(info, tab) {
   var idcard = fnGenerateRandom();
   // copyToClipboard(idcard);
   copyTextToClipboard(idcard);
 }
 
-// Open frameUrl in a new tab
-function gotoFrameUrl(info, tab) {
-  console.log("item " + info.menuItemId + " was clicked");
-  console.log("info: " + JSON.stringify(info));
-  console.log("tab: " + JSON.stringify(tab));
+/**
+ * openFrameInNewTab Open frame in new tab
+ * @param  {Object} info
+ * @param  {Object} tab
+ * @return {}
+ */
+function openFrameInNewTab(info, tab) {
   if (typeof info.frameUrl == "undefined") {
     return;
   } else {
@@ -57,13 +90,39 @@ function gotoFrameUrl(info, tab) {
   chrome.tabs.create({index: 0, url: href});
 }
 
-// Copy text to clipboard, using a simple trick by Jarek Milewski on stackoverflow.com(http://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript)
+/**
+ * refreshCurrentFrame Refresh current frame
+ * @param  {Object} info
+ * @param  {Object} tab
+ * @return {}
+ */
+function refreshCurrentFrame(info, tab) {
+  if (typeof info.frameUrl == "undefined") {
+    return;
+  } else {
+    var href = info.frameUrl; // eg. "http://localhost:8080/cxjz/cxdb/ywbl/dbsqAction.do?&yaa001=110&aae251=0&___businessId=1020502"
+  }
+  info.frameUrl = href;
+}
+
+
+
+
+/**
+ * copyToClipboard Copy text to clipboard,
+ * using a simple trick by Jarek Milewski on stackoverflow.com(http://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript)
+ * @param  {String} text
+ * @return {}
+ */
 function copyToClipboard(text) {
   window.prompt("复制到剪贴板: 先Ctrl+C, 再确定", text);
 }
 
-
-// Using document.execCommand('copy') by Dean Taylor on the same stackoverflow page above
+/**
+ * Using document.execCommand('copy') by Dean Taylor on stackoverflow.com(http://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript)
+ * @param  {String} text
+ * @return {}
+ */
 function copyTextToClipboard(text) {
   var textArea = document.createElement("textarea");
 

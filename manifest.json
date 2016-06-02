@@ -1,5 +1,5 @@
 {
-  "name": "Context Menu Tricks",
+  "name": "Context Menu Magic",
   "description": "better workflow",
   "icons": {
       "16": "images/mario.png"
@@ -10,7 +10,7 @@
     "default_title": "voila!",
     "default_popup": "popup.html"
   },
-  "permissions": ["contextMenus"],
+  "permissions": ["contextMenus", "notifications"],
   "background": {
     "scripts": ["scripts/context.js"]
   },
