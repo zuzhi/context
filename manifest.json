@@ -1,18 +1,59 @@
 {
-  "name": "Context Menu Magic",
+  // Required
+  "manifest_version": 2,
+  "name": "Context",
+  "version": "0.1.0",
+
+  // Recommended
+  "default_locale": "zh_CN",
   "description": "better workflow",
   "icons": {
       "16": "images/mario.png"
   },
-  "version": "0.1.0",
+
+  // Pick one (or none)
   "browser_action": {
     "default_icon": "images/mario.png",
     "default_title": "voila!",
     "default_popup": "popup.html"
   },
-  "permissions": ["contextMenus", "notifications"],
+  // "page_action": {
+  //   "default_icon": {
+  //       "16": "images/mario.png"
+  //   },
+  //   "default_title": "Google Mail",
+  //   "default_popup": "popup.html"
+  // },
+  
+  // Optional
+  "permissions": ["contextMenus", "notifications", "tabs"],
   "background": {
-    "scripts": ["scripts/context.js"]
+    "scripts": ["scripts/context.js"],
+    // Recommended
+    "persistent": false
   },
-  "manifest_version": 2
+  "content_scripts": [
+    {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["scripts/content.js"]
+    }
+  ],
+  "options_ui": {
+    // Required.
+    "page": "options.html",
+    // Recommended.
+    "chrome_style": true
+    // Not recommended; only provided for backwards compatibility,
+    // and will be unsupported in a future version of Chrome (TBD).
+    //"open_in_tab": true
+  },
+  "homepage_url": "https://github.com/zuzhi"
+
+  // "devtools_page": "devtools.html",
+  // "omnibox": { "keyword" : "yeah" },
+  // "chrome_url_overrides" : {
+  //   "newtab": "newtab.html"
+  // }
+  
+  // more about manifest: https://developer.chrome.com/extensions/manifest
 }

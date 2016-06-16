@@ -1,0 +1,18 @@
+{
+	"cmi_copy_action_name": {
+		"message": "copy action name to clipboard",
+		"description": "Title of context menu item"
+	},
+	"cmi_copy_random_id": {
+		"message": "copy a random id to clipboard"
+	},
+	"cmi_open_frame": {
+		"message": "open frame in new tab"
+	},
+	"cmi_refresh_frame": {
+		"message": "refresh current frame"
+	},
+	"cmi_notification": {
+		"message": "notification"
+	}
+}

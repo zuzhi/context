@@ -1,8 +1,9 @@
 body {
   width: 180px;
+  height: 200px;
   /*background-color: #ccc;*/
 }
-ul {
+/*ul {
   padding: 0;
   margin-left: 6px;
 }
@@ -17,3 +18,4 @@ li {
 li:first-of-type {
 	border-left: 1px dashed #222;
 }
+*/

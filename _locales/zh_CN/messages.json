@@ -1,0 +1,18 @@
+{
+	"cmi_copy_action_name": {
+		"message": "复制action name到剪贴板",
+		"description": "右键菜单项的标题"
+	},
+	"cmi_copy_random_id": {
+		"message": "复制一个随机的身份证号到剪贴板"
+	},
+	"cmi_open_frame": {
+		"message": "在新标签页中打开该框架页面"
+	},
+	"cmi_refresh_frame": {
+		"message": "刷新当前框架页面"
+	},
+	"cmi_notification": {
+		"message": "通知"
+	}
+}

@@ -3,33 +3,65 @@ var contexts = ["page","selection","link","editable","image","video","audio"];
 
 chrome.contextMenus.create(
   {
-    "title": 'copy action name to clipboard',
+    "title": chrome.i18n.getMessage("cmi_copy_action_name"),
     "contexts": contexts,
     "onclick": copyActionNameToClipboard
 });
+chrome.contextMenus.create({"type": "separator"});
 chrome.contextMenus.create(
   {
-    "title": 'copy a random id to clipboard',
+    "title": chrome.i18n.getMessage("cmi_copy_random_id"),
     "contexts": contexts,
     "onclick": copyIDCardToClipboard
 });
+chrome.contextMenus.create({"type": "separator"});
 chrome.contextMenus.create(
   {
-    "title": 'open frame in new tab',
+    "title": chrome.i18n.getMessage("cmi_open_frame"),
     "contexts": ["page"],
     "onclick": openFrameInNewTab
 });
+chrome.contextMenus.create({"type": "separator"});
 chrome.contextMenus.create(
   {
-    "title": 'refresh current frame',
+    "title": chrome.i18n.getMessage("cmi_refresh_frame"),
     "contexts": ["page"],
     "onclick": refreshCurrentFrame
 });
+chrome.contextMenus.create({"type": "separator"});
 chrome.contextMenus.create({
-  "title": 'notification',
+  "title": chrome.i18n.getMessage("cmi_notification"),
   "contexts": ["page"],
   "onclick": notify
 });
+
+// chrome.browserAction.setBadgeText({text: "yes"});
+// chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
+//     suggest([
+//       {content: text + " one", description: "the first one"},
+//       {content: text + " number two", description: "the second entry"}
+//     ]);
+// });
+// chrome.omnibox.onInputEntered.addListener(function(text) {
+//     alert('You just typed "' + text + '"');
+// });
+// chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
+//     switch(request.type) {
+//         case "dom-loaded":
+//             // alert(request.data.myProperty);
+//         break;
+//     }
+//     return true;
+// });
+// chrome.runtime.onConnect.addListener(function(port) {
+//     if(port.name == "my-channel"){
+//         port.onMessage.addListener(function(msg) {
+//             // do some stuff here
+//             // alert(msg);
+//         });
+//     }
+// });
+
 
 /**
  * notify test notification
