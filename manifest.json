@@ -5,7 +5,7 @@
   "version": "0.1.0",
 
   // Recommended
-  "default_locale": "zh_CN",
+  "default_locale": "en",
   "description": "better workflow",
   "icons": {
       "16": "images/mario.png"
@@ -28,9 +28,9 @@
   // Optional
   "permissions": ["contextMenus", "notifications", "tabs", "storage"],
   "background": {
-    "scripts": ["scripts/context.js"],
+    "scripts": ["scripts/context.js"]
     // Recommended
-    "persistent": false
+    // "persistent": false
   },
   "content_scripts": [
     {
