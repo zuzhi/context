@@ -26,7 +26,7 @@
   // },
   
   // Optional
-  "permissions": ["contextMenus", "notifications", "tabs"],
+  "permissions": ["contextMenus", "notifications", "tabs", "storage"],
   "background": {
     "scripts": ["scripts/context.js"],
     // Recommended
