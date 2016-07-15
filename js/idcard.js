@@ -105,3 +105,13 @@ function fnGenerateRandom() {
 
   return idcard;
 }
+
+// 随机生成指定性别的IDCARD
+function fnGenerateRandomIDByGender(gender) {
+  while (true) {
+    var idcard = fnGenerateRandom();
+    if (idcard.charAt(16) % 2 == gender) {
+      return idcard;
+    }
+  }
+}

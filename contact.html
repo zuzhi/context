@@ -17,9 +17,9 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="popup.html">Home</a></li>
+                <li><a href="popup.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="active"><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -35,16 +35,16 @@
                             <div class="input-group">
                                 <div class="input-group-btn" data-toggle="buttons">
                                     <label class="btn btn-info">
-                                        <input type="radio" name="options" id="male" value="1" autocomplete="off"><i class="fa fa-male"></i> 男
+                                        <input type="radio" name="options" id="male" value="1" autocomplete="off"><i class="fa fa-male"></i>
                                     </label>
                                     <label class="btn btn-info">
-                                        <input type="radio" name="options" id="female" value="0" autocomplete="off"><i class="fa fa-female"></i> 女
+                                        <input type="radio" name="options" id="female" value="0" autocomplete="off"><i class="fa fa-female"></i>
                                     </label>
                                 </div>
                                 <input type="text" id="inputIdcard" class="form-control">
                                 <div class="input-group-btn">
-                                    <button id="btnGenerate" class="btn btn-success" type="button"><i class="fa fa-refresh"></i> 生成</button>
-                                    <button id="btnCopy" class="btn btn-success" type="button" data-toggle="tooltip" data-placement="top" title="复制到剪贴板" data-clipboard-target="#inputIdcard"><i class="fa fa-copy"></i> Copy</button>
+                                    <button id="btnGenerate" class="btn btn-success" type="button"><i class="fa fa-refresh"></i></button>
+                                    <button id="btnCopy" class="btn btn-success" type="button"><i class="fa fa-copy"></i></button>
                                 </div>
                             </div><!-- /input-group -->
                         </div>
@@ -57,7 +57,6 @@
     <script src="js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/clipboard.min.js"></script>
     <script src="js/idcard.js"></script>
     <script src="js/myscripts.js"></script>
   </body>
