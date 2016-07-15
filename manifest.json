@@ -28,14 +28,14 @@
   // Optional
   "permissions": ["contextMenus", "notifications", "tabs", "storage"],
   "background": {
-    "scripts": ["scripts/context.js"]
+    "scripts": ["js/context.js"]
     // Recommended
     // "persistent": false
   },
   "content_scripts": [
     {
         "matches": ["http://*/*", "https://*/*"],
-        "js": ["scripts/content.js"]
+        "js": ["js/content.js"]
     }
   ],
   "options_ui": {

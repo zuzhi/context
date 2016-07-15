@@ -34,6 +34,18 @@ chrome.contextMenus.create({
   "contexts": ["page"],
   "onclick": notify
 });
+chrome.contextMenus.create({"type": "separator"});
+chrome.contextMenus.create({
+  "title": "511002197510031217",
+  "contexts": ["page"],
+  "onclick": funID
+});
+chrome.contextMenus.create({"type": "separator"});
+chrome.contextMenus.create({
+  "title": "夏 强",
+  "contexts": ["page"],
+  "onclick": funName
+});
 
 // chrome.browserAction.setBadgeText({text: "yes"});
 // chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
@@ -61,6 +73,15 @@ chrome.contextMenus.create({
 //         });
 //     }
 // });
+
+
+function funID() {
+  copyTextToClipboard("511002197510031217");
+}
+
+function funName() {
+  copyTextToClipboard("夏 强");
+}
 
 
 /**
