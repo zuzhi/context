@@ -10,13 +10,6 @@ chrome.contextMenus.create(
 chrome.contextMenus.create({"type": "separator"});
 chrome.contextMenus.create(
   {
-    "title": chrome.i18n.getMessage("cmi_copy_random_id"),
-    "contexts": contexts,
-    "onclick": copyIDCardToClipboard
-});
-chrome.contextMenus.create({"type": "separator"});
-chrome.contextMenus.create(
-  {
     "title": chrome.i18n.getMessage("cmi_open_frame"),
     "contexts": ["page"],
     "onclick": openFrameInNewTab
