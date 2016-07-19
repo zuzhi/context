@@ -29,9 +29,10 @@
         <div class="row">
             <div class="col-xs-12">
                 <form class="form-horizontal" role="form">
+                    <h3>身份证号生成器</h3>
+                    <hr>
                     <div class="form-group">
-                        <label for="firstname" class="col-sm-2 control-label">身份证号生成器</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-12">
                             <div class="input-group">
                                 <div class="input-group-btn" data-toggle="buttons">
                                     <label class="btn btn-info">
@@ -44,6 +45,42 @@
                                 <input type="text" id="inputIdcard" class="form-control">
                                 <div class="input-group-btn">
                                     <button id="btnGenerate" class="btn btn-success" type="button"><i class="fa fa-refresh"></i> 生成</button>
+                                    <button id="btnCopy" class="btn btn-success" type="button" data-toggle="tooltip" data-placement="top" title="复制到剪贴板" data-clipboard-target="#inputIdcard"><i class="fa fa-copy"></i> 复制</button>
+                                </div>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+                    <br>
+                    <h3>当前页面相关</h3>
+                    <hr>
+                    <div class="form-group">
+                        <label for="firstname" class="col-sm-2 control-label">Action</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input type="text" id="inputIdcard" class="form-control">
+                                <div class="input-group-btn">
+                                    <button id="btnCopy" class="btn btn-success" type="button" data-toggle="tooltip" data-placement="top" title="复制到剪贴板" data-clipboard-target="#inputIdcard"><span class="glyphicon glyphicon-copy"></span> Copy</button>
+                                </div>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname" class="col-sm-2 control-label">Method</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input type="text" id="inputIdcard" class="form-control">
+                                <div class="input-group-btn">
+                                    <button id="btnCopy" class="btn btn-success" type="button" data-toggle="tooltip" data-placement="top" title="复制到剪贴板" data-clipboard-target="#inputIdcard"><span class="glyphicon glyphicon-copy"></span> Copy</button>
+                                </div>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname" class="col-sm-2 control-label">Result (JSP file name)</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input type="text" id="inputIdcard" class="form-control">
+                                <div class="input-group-btn">
                                     <button id="btnCopy" class="btn btn-success" type="button" data-toggle="tooltip" data-placement="top" title="复制到剪贴板" data-clipboard-target="#inputIdcard"><span class="glyphicon glyphicon-copy"></span> Copy</button>
                                 </div>
                             </div><!-- /input-group -->
